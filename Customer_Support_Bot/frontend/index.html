@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaMart Support</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark">N</span>
+        <div>
+          <h1>NovaMart</h1>
+          <p>Customer Support</p>
+        </div>
+      </div>
+      <div class="status-card" id="statusCard">
+        <span class="dot" id="statusDot"></span>
+        <div>
+          <strong id="statusLabel">Checking…</strong>
+          <small id="statusMeta">Connecting to API</small>
+        </div>
+      </div>
+      <div class="tips">
+        <h2>Try asking</h2>
+        <button type="button" class="chip" data-prompt="What is your return policy?">Return policy</button>
+        <button type="button" class="chip" data-prompt="My package arrived damaged. What should I do?">Damaged package</button>
+        <button type="button" class="chip" data-prompt="How long do refunds take?">Refund timing</button>
+        <button type="button" class="chip" data-prompt="I want to speak to a human agent about a billing dispute.">Escalate</button>
+      </div>
+      <button type="button" class="ghost-btn" id="clearBtn">Clear conversation</button>
+    </aside>
+
+    <main class="chat-panel">
+      <header class="chat-header">
+        <div>
+          <h2>Support chat</h2>
+          <p>Ask about orders, returns, shipping, or billing</p>
+        </div>
+        <div id="escalateBadge" class="badge hidden">Escalated to human</div>
+      </header>
+
+      <section id="messages" class="messages" aria-live="polite"></section>
+
+      <form id="chatForm" class="composer">
+        <textarea id="messageInput" rows="2" placeholder="Describe your issue…" maxlength="4000" required></textarea>
+        <button type="submit" id="sendBtn">
+          <span class="btn-label">Send</span>
+          <span class="spinner hidden" id="sendSpinner"></span>
+        </button>
+      </form>
+      <p id="toast" class="toast hidden" role="status"></p>
+    </main>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
